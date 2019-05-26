@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+ï»¿#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 from snipsTools import SnipsConfigParser
@@ -50,7 +50,7 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Bon après-midi"
+        joke_msg = "Bon aprÃ©s-midi"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Apres_midi")
 		
@@ -70,7 +70,7 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "A vous aussi ! Je vous souhaite une bonne soirée."
+        joke_msg = "A vous aussi ! Je vous souhaite une bonne soirÃ©e."
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonsoir")
 		
@@ -80,7 +80,7 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Bonjour ! J'espère que vous allez bien aujourd'hui !"
+        joke_msg = "Bonjour ! J'espÃ¨re que vous allez bien aujourd'hui !"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonjour")
 		
@@ -90,7 +90,7 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Moi aussi je suis fatigué ! Passez une bonne nuit !"
+        joke_msg = "Moi aussi je suis fatiguÃ© ! Passez une bonne nuit !"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonne_nuit")
     # More callback function goes here...
@@ -102,13 +102,13 @@ class Test(object):
             self.test_callback(hermes, intent_message)
         if coming_intent == 'Darghorn:Apres_midi':
             self.Apres_midi_callback(hermes, intent_message)
-		if coming_intent == 'Darghorn:Appetit':
+        if coming_intent == 'Darghorn:Appetit':
             self.Appetit_callback(hermes, intent_message)
-		if coming_intent == 'Darghorn:Bonsoir':
+        if coming_intent == 'Darghorn:Bonsoir':
             self.Bonsoir_callback(hermes, intent_message)
         if coming_intent == 'Darghorn:Bonjour':
             self.Bonjour_callback(hermes, intent_message)
-		if coming_intent == 'Darghorn:Bonne_nuit':
+        if coming_intent == 'Darghorn:Bonne_nuit':
             self.Bonne_nuit_callback(hermes, intent_message)
         # more callback and if condition goes here...
 
