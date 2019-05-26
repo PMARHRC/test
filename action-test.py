@@ -19,7 +19,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 class Test(object):
     """Class used to wrap action code with mqtt connection
-        
+
         Please change the name refering to your application
     """
 
@@ -32,7 +32,7 @@ class Test(object):
 
         # start listening to MQTT
         self.start_blocking()
-        
+
     # --> Sub callback function, one per intent
     def test_callback(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -40,9 +40,9 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-		joke_msg = "SAALUUUT !"
+        joke_msg = "SAALUUUT !"
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg)
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "test")
 
     # More callback function goes here...
 
