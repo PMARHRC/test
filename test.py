@@ -6,7 +6,7 @@ from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 import io
 import requests
-# import HTMLParser
+import HTMLParser
 
 CONFIG_INI = "config.ini"
 
@@ -34,7 +34,7 @@ class Test(object):
         self.start_blocking()
         
     # --> Sub callback function, one per intent
-    def askJoke_callback(self, hermes, intent_message):
+    def test_callback(self, hermes, intent_message):
         # terminate the session first if not continue
         hermes.publish_end_session(intent_message.session_id, "")
         
@@ -52,7 +52,7 @@ class Test(object):
     def master_intent_callback(self,hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'PierreMarteau:test':
-            self.askJoke_callback(hermes, intent_message)
+            self.test_callback(hermes, intent_message)
 
         # more callback and if condition goes here...
 
