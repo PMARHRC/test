@@ -42,7 +42,7 @@ class Test(object):
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
 
 #        joke_msg = HTMLParser.HTMLParser().unescape(str(requests.get("https://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1").json()[0].get("fact")))
-		joke_msg = "SAALUUUT !"
+        joke_msg = "SAALUUUT !"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg)
 
