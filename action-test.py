@@ -5,8 +5,8 @@ from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 import io
-import requests
-import HTMLParser
+# import requests
+# import HTMLParser
 
 CONFIG_INI = "config.ini"
 
