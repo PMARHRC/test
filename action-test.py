@@ -40,10 +40,59 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "SAALUUUT !"
+        joke_msg = "Ceci est un test et il fonctionne ! Magnifique !"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "test")
+		
+    def Apres_midi_callback(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
 
+        # action code goes here...
+        print '[Received] intent: {}'.format(intent_message.intent.intent_name)
+        joke_msg = "Bon après-midi"
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Apres_midi")
+		
+    def Appetit_callback(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
+
+        # action code goes here...
+        print '[Received] intent: {}'.format(intent_message.intent.intent_name)
+        joke_msg = "Merci ! Bon appetit !"
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Appetit")
+
+    def Bonsoir_callback(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
+
+        # action code goes here...
+        print '[Received] intent: {}'.format(intent_message.intent.intent_name)
+        joke_msg = "A vous aussi ! Je vous souhaite une bonne soirée."
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonsoir")
+		
+    def Bonjour_callback(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
+
+        # action code goes here...
+        print '[Received] intent: {}'.format(intent_message.intent.intent_name)
+        joke_msg = "Bonjour ! J'espère que vous allez bien aujourd'hui !"
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonjour")
+		
+    def Bonne_nuit_callback(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
+
+        # action code goes here...
+        print '[Received] intent: {}'.format(intent_message.intent.intent_name)
+        joke_msg = "Moi aussi je suis fatigué ! Passez une bonne nuit !"
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonne_nuit")
     # More callback function goes here...
 
     # --> Master callback function, triggered everytime an intent is recognized
@@ -51,7 +100,16 @@ class Test(object):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'PierreMarteau:test':
             self.test_callback(hermes, intent_message)
-
+        if coming_intent == 'Darghorn:Apres_midi':
+            self.Apres_midi_callback(hermes, intent_message)
+		if coming_intent == 'Darghorn:Appetit':
+            self.Appetit_callback(hermes, intent_message)
+		if coming_intent == 'Darghorn:Bonsoir':
+            self.Bonsoir_callback(hermes, intent_message)
+        if coming_intent == 'Darghorn:Bonjour':
+            self.Bonjour_callback(hermes, intent_message)
+		if coming_intent == 'Darghorn:Bonne_nuit':
+            self.Bonne_nuit_callback(hermes, intent_message)
         # more callback and if condition goes here...
 
     # --> Register callback function and start MQTT
