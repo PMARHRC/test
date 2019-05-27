@@ -43,7 +43,7 @@ class Polite(object):
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
         say = ["bon après midi", "bonne sieste", "bonne digestion", "bon après midi très cher"]
-		result_sentence = random.choice(say)
+        result_sentence = random.choice(say)
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Apres_midi")
 		
@@ -54,7 +54,7 @@ class Polite(object):
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
         say = ["bon appétit", "ne mangez pas trop", "attention aux calories", "il faut macher lentement", "Merci ! Bon appetit !"]
-		result_sentence = random.choice(say)
+        result_sentence = random.choice(say)
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Appetit")
 
@@ -65,7 +65,7 @@ class Polite(object):
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
         say = ["bonsoir, cordialement", "bonsoir", "heu bonsoir", "bien le bonsoir", "oh bonsoir", "bonsoir très cher", "A vous aussi ! Je vous souhaite une bonne soiree."]
-		result_sentence = random.choice(say)
+        result_sentence = random.choice(say)
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Bonsoir")
 		
