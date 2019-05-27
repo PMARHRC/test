@@ -40,9 +40,9 @@ class mySnipsIP(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-		from subprocess import check_output
-		result_sentence = check_output("ip addr | grep inet | grep -v inet6 | grep -v 127",shell=True)
-		result_sentence = result_sentence.split()[1]
+        from subprocess import check_output
+        result_sentence = check_output("ip addr | grep inet | grep -v inet6 | grep -v 127",shell=True)
+        result_sentence = result_sentence.split()[1]
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, result_sentence[:-3].replace(".","point"), "myIP")
 		
