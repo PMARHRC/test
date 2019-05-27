@@ -5,6 +5,7 @@ from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 import io
+import random
 # import requests
 # import HTMLParser
 
@@ -41,9 +42,10 @@ class Polite(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Bon apres-midi"
+        say = ["bon après midi", "bonne sieste", "bonne digestion", "bon après midi très cher"]
+		result_sentence = random.choice(say)
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Apres_midi")
+        hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Apres_midi")
 		
     def Appetit_callback(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -51,9 +53,10 @@ class Polite(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Merci ! Bon appetit !"
+        say = ["bon appétit", "ne mangez pas trop", "attention aux calories", "il faut macher lentement", "Merci ! Bon appetit !"]
+		result_sentence = random.choice(say)
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Appetit")
+        hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Appetit")
 
     def Bonsoir_callback(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -61,9 +64,10 @@ class Polite(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "A vous aussi ! Je vous souhaite une bonne soiree."
+        say = ["bonsoir, cordialement", "bonsoir", "heu bonsoir", "bien le bonsoir", "oh bonsoir", "bonsoir très cher", "A vous aussi ! Je vous souhaite une bonne soiree."]
+		result_sentence = random.choice(say)
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonsoir")
+        hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Bonsoir")
 		
     def Bonjour_callback(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -71,9 +75,10 @@ class Polite(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Bonjour ! J'espere que vous allez bien aujourd'hui !"
+        say = ["Bonjour", "Salut", "Bonjour. sa fait longtemps.", "Yo. J'espaire que tu vas bien", "Bonjour. Prait pour une super journer?", "Salut. Je suis pas d'humeur aujourd'hui", "Je suis de très bonne humeur aujourd'hui", "Hello", "Bonjour ! J'espere que vous allez bien aujourd'hui !"]
+        result_sentence = random.choice(say)
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonjour")
+        hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Bonjour")
 		
     def Bonne_nuit_callback(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -81,9 +86,12 @@ class Polite(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Moi aussi je suis fatigue ! Passez une bonne nuit !"
+		# Entrez des phrases dans le tableau ci-dessous, une phrase sera choisie aléatoirement 
+        say = ["A demain, faites de beaux raives", "Moi aussi je suis fatigue ! Passez une bonne nuit !", "Moi aussi je vais dormir, je suis crever", "Bonne nuit !", "Dormez bien, a demain ", "Baille baille ", "OK. Moi je vais regarder un bon film à la ter ler", "Dors bien et à demain pour une autre super journer"]
+        #choix aléatoire d'une phrase
+        result_sentence = random.choice(say)
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "Bonne_nuit")
+        hermes.publish_start_session_notification(intent_message.site_id, result_sentence, "Bonne_nuit")
     # More callback function goes here...
 
     # --> Master callback function, triggered everytime an intent is recognized
