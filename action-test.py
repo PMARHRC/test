@@ -40,7 +40,7 @@ class Test(object):
 
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
-        joke_msg = "Ceci est un test et il fonctionne ! Magnifique !"
+        joke_msg = "Coucou Tristan et Abderahmane"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "test")
 		
