@@ -43,7 +43,7 @@ class Test(object):
         joke_msg = "Coucou Tristan et Abderahmane"
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, joke_msg, "test")
-		
+
 
     # More callback function goes here...
 
